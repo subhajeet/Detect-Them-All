@@ -1,0 +1,1 @@
+- *Different payloads with multiple combinations and arguments for the tool [Empire](https://github.com/BC-SECURITY/Empire).*
