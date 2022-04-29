@@ -1,0 +1,24 @@
+
+Executed:
+  CLI:  Encoding\8
+  FULL: Out-EncodedWhitespaceCommand -ScriptBlock $ScriptBlock -PassThru
+
+Result:
+'                                                                                                                                                                                                                                                                                                             
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+                                                                                                                                                                                                                                                                                                              
+
+                                                                                                                                                       
+
+                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <REDACTED: ObfuscatedLength = 53349>                                                                                                                                                                                                                                               
+
+                                                                                                                                                       
+                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                            ' | forEaCH-obJect{$NbFzUl= $_ -SPLit '
+'| forEaCH-obJect{ '    '; $_ -SPLit '  '|forEaCH-obJect{ $_.lengTH-1}}; [StrInG]::JoIN('' ,[CHar[]][INt[]] ( "$( sV 'oFs' '') "+ [StrIng]$NbFzUl[0..($NbFzUl.lengTH-1)] +"$( sV 'OFS' ' ' )").TRIm( '  ' ).SpLit( '   ' ) )|iEx}
