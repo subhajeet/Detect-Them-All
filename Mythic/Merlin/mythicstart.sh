@@ -1,4 +1,5 @@
 # Script to get merlin started 
+# Credits : @senhaxor (https://github.com/senhaxor)
 
 
 git clone https://github.com/its-a-feature/Mythic
